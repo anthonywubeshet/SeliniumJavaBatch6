@@ -7,7 +7,10 @@ import org.openqa.selenium.support.PageFactory;
 import com.syntax.utils.BaseClass;
 
 public class LoginPageElements {
+	//not using PageFactory, you have to extends CommonMethods or BaseClass
+	//public WebElement username2=driver.findElement(By.id("txtUsername"));
 	
+	//Using PageFactory and @FindBy Annotation
 	@FindBy(id="txtUsername")
 	public WebElement username;
 	
@@ -19,6 +22,9 @@ public class LoginPageElements {
 	
 	@FindBy(xpath="//div[@id='divLogo']/img")
 	public WebElement logo;
+	
+	@FindBy(id= "spanMessage")
+	public WebElement errorMsg;
 
 	public LoginPageElements() {
 		PageFactory.initElements(BaseClass.driver, this);
